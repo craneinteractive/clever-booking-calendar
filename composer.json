@@ -8,8 +8,12 @@
             "email": "ben.sutton@craneinteractive.co.uk"
         }
     ],
-    "require": {},
+    "require": {
+        "symfony/dependency-injection": "^5.1"
+    },
     "autoload": {
         "psr-4": {"CleverBookingCalendar\\": "src/"}
+    },
+    "require-dev": {
     }
 }

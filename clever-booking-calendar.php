@@ -1,4 +1,5 @@
 <?php
+
 /**
  *
  * @link              https://github.com/craneinteractive/clever-booking-calendar
@@ -17,3 +18,27 @@
  * Text Domain:       cleverbookingcalendar
  * Domain Path:       /languages
  */
+
+if (!defined('ABSPATH')) die;
+
+require_once plugin_dir_path(__FILE__) . 'vendor/autoload.php';
+
+define('PLUGIN_VERSION', '0.1.0');
+define('CBC_SLUG', 'CICBC');
+
+function clever_booking_calendar()
+{
+    static $plugin;
+
+    if (isset($plugin) && $plugin instanceof \CleverBookingCalendar\Init) {
+        return $plugin;
+    }
+
+    $containerBuilder = new Symfony\Component\DependencyInjection\ContainerBuilder();
+    $containerBuilder->register('container', '\CleverBookingCalendar\Init');
+
+    $plugin = $containerBuilder->get('container');
+    $plugin->run();
+}
+
+clever_booking_calendar();
