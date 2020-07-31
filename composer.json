@@ -1,0 +1,15 @@
+{
+    "name": "craneinteractive/clever-booking-calendar",
+    "type": "project",
+    "license": "GPLv2",
+    "authors": [
+        {
+            "name": "Ben Sutton",
+            "email": "ben.sutton@craneinteractive.co.uk"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {"CleverBookingCalendar\\": "src/"}
+    }
+}
